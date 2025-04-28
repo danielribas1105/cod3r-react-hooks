@@ -4,13 +4,13 @@ import Logo from "./Logo"
 import MenuPrincipalItem from "./MenuPrincipalItem"
 import MenuPrincipalSecao from "./MenuPrincipalSecao"
 import Flex from "./Flex"
-import { IconArrowsLeftRight, IconLetterCase, IconMathGreater, IconNumbers, IconRefreshAlert, IconSearch, IconSection, IconSettings, IconUsers } from "@tabler/icons-react"
+import { IconAppWindow, IconArrowsLeftRight, IconLetterCase, IconMathGreater, IconNumbers, IconRefreshAlert, IconSearch, IconSection, IconSettings, IconUsers } from "@tabler/icons-react"
 
 export default function MenuPrincipal() {
 	const secoes = [
 		{
 			titulo: "Essenciais",
-			aberta: true,
+			aberta: false,
 			itens: [
 				{
 					titulo: "Contador",
@@ -62,6 +62,18 @@ export default function MenuPrincipal() {
 				},
 			],
 		},
+		{
+			titulo: "Personalizados",
+			aberta: true,
+			itens: [
+				{
+					titulo: "Modal",
+					url: "/personalizados/modal",
+					tag: "personalizados",
+					icone: <IconAppWindow />,
+				},
+			]
+		}
 	]
 	const mini = false
 	function renderizarSecoes() {
