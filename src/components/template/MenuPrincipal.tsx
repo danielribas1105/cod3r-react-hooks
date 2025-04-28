@@ -4,7 +4,7 @@ import Logo from "./Logo"
 import MenuPrincipalItem from "./MenuPrincipalItem"
 import MenuPrincipalSecao from "./MenuPrincipalSecao"
 import Flex from "./Flex"
-import { IconNumbers, IconUsers } from "@tabler/icons-react"
+import { IconArrowsLeftRight, IconLetterCase, IconMathGreater, IconNumbers, IconUsers } from "@tabler/icons-react"
 
 export default function MenuPrincipal() {
 	const secoes = [
@@ -28,7 +28,19 @@ export default function MenuPrincipal() {
 					titulo: "Consulta API",
 					url: "/essenciais/consultaAPI",
 					tag: "useEffect",
-					icone: <IconUsers />,
+					icone: <IconArrowsLeftRight />,
+				},
+				{
+					titulo: "Maior",
+					url: "/essenciais/maior",
+					tag: "useEffect",
+					icone: <IconMathGreater />,
+				},
+				{
+					titulo: "Contagem de Caracteres",
+					url: "/essenciais/contagemCaracteres",
+					tag: "useEffect",
+					icone: <IconLetterCase />,
 				},
 			],
 		},
