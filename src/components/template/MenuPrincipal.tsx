@@ -4,7 +4,18 @@ import Logo from "./Logo"
 import MenuPrincipalItem from "./MenuPrincipalItem"
 import MenuPrincipalSecao from "./MenuPrincipalSecao"
 import Flex from "./Flex"
-import { IconAppWindow, IconArrowsLeftRight, IconLetterCase, IconMathGreater, IconNumbers, IconRefreshAlert, IconSearch, IconSection, IconSettings, IconUsers } from "@tabler/icons-react"
+import {
+	IconAppWindow,
+	IconArrowsLeftRight,
+	IconDimensions,
+	IconLetterCase,
+	IconLock,
+	IconMathGreater,
+	IconNumbers,
+	IconRefreshAlert,
+	IconSection,
+	IconUsers,
+} from "@tabler/icons-react"
 
 export default function MenuPrincipal() {
 	const secoes = [
@@ -72,8 +83,20 @@ export default function MenuPrincipal() {
 					tag: "personalizados",
 					icone: <IconAppWindow />,
 				},
-			]
-		}
+				{
+					titulo: "Tamanho Janela",
+					url: "/personalizados/tamanhoJanela",
+					tag: "personalizados",
+					icone: <IconDimensions />,
+				},
+				{
+					titulo: "Validando Senha",
+					url: "/personalizados/senha",
+					tag: "personalizados",
+					icone: <IconLock />,
+				},
+			],
+		},
 	]
 	const mini = false
 	function renderizarSecoes() {
@@ -105,7 +128,7 @@ export default function MenuPrincipal() {
             scrollbar-thumb-zinc-700 scrollbar-track-zinc-800 
             scrollbar-thin
             ${mini ? "items-center w-[130px]" : "w-[370px]"}
-        `}
+         `}
 		>
 			<Flex center className="m-7">
 				{!mini && <Logo />}
