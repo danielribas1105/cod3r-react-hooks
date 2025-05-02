@@ -11,11 +11,17 @@ import {
 	IconLetterCase,
 	IconLock,
 	IconMathGreater,
+	IconMenu,
 	IconNumbers,
 	IconRefreshAlert,
 	IconSection,
+	IconShoppingCart,
 	IconUsers,
+	IconX,
 } from "@tabler/icons-react"
+import useTamanhoJanela from "@/data/hooks/useTamanhoJanela"
+import { useEffect } from "react"
+import useBoolean from "@/data/hooks/useBoolean"
 
 export default function MenuPrincipal() {
 	const secoes = [
@@ -75,7 +81,7 @@ export default function MenuPrincipal() {
 		},
 		{
 			titulo: "Personalizados",
-			aberta: true,
+			aberta: false,
 			itens: [
 				{
 					titulo: "Modal",
@@ -97,8 +103,30 @@ export default function MenuPrincipal() {
 				},
 			],
 		},
+		{
+			titulo: "Contextos",
+			aberta: true,
+			itens: [
+				{
+					titulo: "Loja",
+					url: "/contexto/loja",
+					tag: "useContext",
+					icone: <IconShoppingCart />,
+				}
+			],
+		},
 	]
-	const mini = false
+	const [mini, toggleMini, miniTrue, miniFalse] = useBoolean(false)
+	let tamanho = useTamanhoJanela()
+
+	useEffect(() => {
+		if(tamanho === "md" || tamanho === "sm"){
+			miniTrue()
+		}else {
+			miniFalse()
+		}
+	}, [tamanho])
+
 	function renderizarSecoes() {
 		return secoes.map((secao: MenuSecao) => (
 			<MenuPrincipalSecao key={secao.titulo} titulo={secao.titulo} mini={mini} aberta={secao.aberta}>
@@ -128,10 +156,13 @@ export default function MenuPrincipal() {
             scrollbar-thumb-zinc-700 scrollbar-track-zinc-800 
             scrollbar-thin
             ${mini ? "items-center w-[130px]" : "w-[370px]"}
-         `}
+        `}
 		>
 			<Flex center className="m-7">
 				{!mini && <Logo />}
+				<div className="cursor-pointer" onClick={toggleMini}>
+					{mini ? <IconMenu/> : <IconX/>}
+				</div>
 			</Flex>
 			<nav className="flex flex-col gap-4 m-7">{renderizarSecoes()}</nav>
 		</aside>

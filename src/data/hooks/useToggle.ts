@@ -7,6 +7,6 @@ export default function useToggle(valor?: boolean) {
         setAtivo(!ativo)
     }
 
-    const r: [Boolean, () => void] = [ativo, toggleAtivo] //tipando o retorno
+    const r: [boolean, () => void] = [ativo, toggleAtivo] //tipando o retorno
     return r //semelhante ao useState, retorna a variável e uma função para alterar a variável
 }
