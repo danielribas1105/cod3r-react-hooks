@@ -1,7 +1,6 @@
-import Link from "next/link"
-import { IconCode } from "@tabler/icons-react"
-import { useRouter } from "next/router"
 import useTema from "@/data/hooks/useTema"
+import { IconCode } from "@tabler/icons-react"
+import Link from "next/link"
 
 interface MenuItemProps {
 	icone?: any
@@ -9,13 +8,12 @@ interface MenuItemProps {
 	tag?: string
 	url: string
 	mini?: boolean
+	selecionado?: boolean | undefined
 }
 
 export default function MenuItem(props: MenuItemProps) {
-	const { icone, titulo, tag, url, mini } = props
+	const { icone, titulo, tag, url, mini, selecionado } = props
 	const { corDestaque } = useTema()
-	const router = useRouter()
-	const ativo = url === router.asPath
 
 	return (
 		<Link
@@ -24,15 +22,15 @@ export default function MenuItem(props: MenuItemProps) {
 			className={`
             flex items-center gap-2 text-zinc-400 rounded-md
             hover:bg-zinc-800 px-3 py-2
-            ${ativo && `text-${corDestaque} bg-zinc-900`}
-        `}
+            ${selecionado && `text-${corDestaque} bg-zinc-900`}
+         `}
 		>
 			{icone ?? <IconCode />}
 			{!mini && titulo}
 			{!mini && tag && (
 				<span
 					className={`${
-						ativo ? `bg-${corDestaque}` : "bg-zinc-700"
+						selecionado ? `bg-${corDestaque}` : "bg-zinc-700"
 					} text-white text-[11px] rounded-full px-2`}
 				>
 					{tag}
