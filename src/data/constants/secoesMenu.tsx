@@ -6,6 +6,7 @@ import {
 	IconLock,
 	IconMathGreater,
 	IconNumbers,
+	IconPin,
 	IconRefreshAlert,
 	IconSection,
 	IconShoppingCart,
@@ -93,13 +94,25 @@ export const secoes = [
 	},
 	{
 		titulo: "Contextos",
-		aberta: true,
+		aberta: false,
 		itens: [
 			{
 				titulo: "Loja",
 				url: "/contexto/loja",
 				tag: "useContext",
 				icone: <IconShoppingCart />,
+			},
+		],
+	},
+	{
+		titulo: "Outros",
+		aberta: true,
+		itens: [
+			{
+				titulo: "Memoizando Eventos",
+				url: "/outros/memoizacao",
+				tag: "useMemo",
+				icone: <IconPin />,
 			},
 		],
 	},
