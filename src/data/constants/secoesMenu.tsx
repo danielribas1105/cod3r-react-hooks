@@ -109,9 +109,15 @@ export const secoes = [
 		aberta: true,
 		itens: [
 			{
-				titulo: "Memoizando Eventos",
+				titulo: "Memoizando Elementos",
 				url: "/outros/memoizacao",
 				tag: "useMemo",
+				icone: <IconPin />,
+			},
+			{
+				titulo: "Memoizando Funções",
+				url: "/outros/memoizandoFuncoes",
+				tag: "useCallback",
 				icone: <IconPin />,
 			},
 		],
