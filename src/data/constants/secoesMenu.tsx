@@ -1,6 +1,7 @@
 import {
 	IconAppWindow,
 	IconArrowsLeftRight,
+	IconColorSwatch,
 	IconDimensions,
 	IconForms,
 	IconLetterCase,
@@ -11,6 +12,7 @@ import {
 	IconRefreshAlert,
 	IconSection,
 	IconShoppingCart,
+	IconTextColor,
 	IconUsers,
 } from "@tabler/icons-react"
 
@@ -126,6 +128,18 @@ export const secoes = [
 				url: "/outros/formularioImperativeHandle",
 				tag: "useImperativeHandle",
 				icone: <IconForms />,
+			},
+			{
+				titulo: "Texto Secreto",
+				url: "/outros/texto",
+				tag: "useLayoutEffect",
+				icone: <IconTextColor />,
+			},
+			{
+				titulo: "Gerador de Cor",
+				url: "/outros/geradorDeCor",
+				tag: "useLayoutEffect",
+				icone: <IconColorSwatch />,
 			},
 		],
 	},
